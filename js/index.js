@@ -42,13 +42,13 @@ let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
 //Nav bar edits
-const navBar = document.querySelectorAll("nav > a");
-navBar[0].textContent=siteContent.nav["nav-item-1"];
-navBar[1].textContent=siteContent.nav["nav-item-2"];
-navBar[2].textContent=siteContent.nav["nav-item-3"];
-navBar[3].textContent=siteContent.nav["nav-item-4"];
-navBar[4].textContent=siteContent.nav["nav-item-5"];
-navBar[5].textContent=siteContent.nav["nav-item-6"];
+const navBarAnchors = document.querySelectorAll("nav > a");
+navBarAnchors[0].textContent=siteContent.nav["nav-item-1"];
+navBarAnchors[1].textContent=siteContent.nav["nav-item-2"];
+navBarAnchors[2].textContent=siteContent.nav["nav-item-3"];
+navBarAnchors[3].textContent=siteContent.nav["nav-item-4"];
+navBarAnchors[4].textContent=siteContent.nav["nav-item-5"];
+navBarAnchors[5].textContent=siteContent.nav["nav-item-6"];
 
 //cta section
 const ctaTextH1 = document.querySelector(".cta-text h1");
@@ -85,7 +85,7 @@ mainContentImage.setAttribute("src", siteContent["main-content"]["middle-img-src
 //contact content
 const contactContentHeader = document.querySelector(".contact h4")
 const contactContentParagraph = document.querySelectorAll(".contact p")
-console.log(contactContentHeader, contactContentParagraph);
+
 
 const contactStrings = siteContent["contact"];
 contactContentHeader.textContent = contactStrings["contact-h4"];
@@ -97,3 +97,20 @@ contactContentParagraph[2].textContent=contactStrings["email"];
 const footer = document.querySelector("footer");
 footer.textContent = siteContent["footer"]["copyright"];
 
+//Augments
+
+var addNav1 = document.createElement("a");
+// var addNav1Text = document.createTextNode("Nuggets");
+addNav1.textContent = "Nuggets";
+addNav1.href="#";
+document.querySelector("nav").appendChild(addNav1);
+
+var addNav2 = document.createElement("a");
+addNav2.textContent = "Blogs";
+addNav2.href="#";
+document.querySelector("nav").prepend(addNav2);
+
+
+document.querySelectorAll("nav a").forEach((element)=>{
+  element.style.color = "green";
+});
